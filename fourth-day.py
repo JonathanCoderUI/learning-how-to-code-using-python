@@ -20,6 +20,8 @@ print("I'm back malemnya, lanjut belacar ya ges ya")
 
 # contoh variabel deh ini
 
+print("-------------------------------")
+
 jumlah_siswa = 150
 
 rating = 4.95
