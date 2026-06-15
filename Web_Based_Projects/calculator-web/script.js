@@ -36,7 +36,11 @@ function calculate() {
         
         display.value = result;
 
-        addHistory(expression, result);
+        const hasOperator = /[\+\-\*\/]/.test(expression);
+        
+        if (hasOperator) {
+            addHistory(expression, result);
+        }
 
     } catch (error) {
         display.value = 'Error';
@@ -44,8 +48,8 @@ function calculate() {
 
         setTimeout(function() {
             if (display.value === 'Error') {
-                display.value = '';
-                display.style.color = '#25d366';
+                display.value = ''; 
+                display.style.color = '#25d366'; 
             }
         }, 3000);
     }
