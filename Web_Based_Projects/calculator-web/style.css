@@ -147,3 +147,25 @@ button.equal:hover {
 .clear-history-btn:hover {
     background-color: #d62217;
 }
+
+/* Gaya untuk Kotak Definisi di Bawah */
+.definition-card {
+    max-width: 650px;
+    margin: 30px auto 0 auto; /* Memberi jarak dari kalkulator di atasnya */
+    padding: 15px 20px;
+    background-color: #16161a;
+    border-radius: 12px;
+    border-left: 4px solid #25d366; /* Garis aksen hijau neon di sebelah kiri */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.definition-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #a0a0aa;
+    line-height: 1.6;
+}
+
+.definition-card strong {
+    color: #25d366; /* Membuat judul mini "Apa itu Kalkulator?" berwarna hijau neon */
+}
