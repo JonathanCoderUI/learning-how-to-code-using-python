@@ -85,3 +85,13 @@ function toggleTheme() {
         `;
     }
 }
+
+function backspace() {
+    if (display.value === 'Error') {
+        display.value = '';
+        display.style.color = '#25d366';
+        return;
+    }
+
+    display.value = display.value.toString().slice(0, -1);
+}
