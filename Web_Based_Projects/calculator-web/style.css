@@ -169,3 +169,12 @@ button.equal:hover {
 .definition-card strong {
     color: #25d366; /* Membuat judul mini "Apa itu Kalkulator?" berwarna hijau neon */
 }
+
+/* Mengatur jalannya susunan komponen dari atas ke bawah */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Jarak antara container atas dan kotak definisi di bawahnya */
+}
