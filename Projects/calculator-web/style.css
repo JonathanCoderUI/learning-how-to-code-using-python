@@ -1,0 +1,81 @@
+/* Mengatur halaman agar kontennya berada tepat di tengah-tengah layar */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e; /* Warna latar belakang gelap */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Mengatur kotak utama kalkulator */
+.calculator {
+    background-color: #333333;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    width: 320px;
+}
+
+/* Mengatur layar tempat angka muncul */
+#display {
+    width: 100%;
+    height: 60px;
+    background-color: #222222;
+    border: none;
+    color: #ffffff;
+    text-align: right;
+    padding: 15px;
+    font-size: 28px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Mengatur susunan tombol menjadi bentuk grid (baris dan kolom) */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom yang sama rata */
+    gap: 12px; /* Jarak antar tombol */
+}
+
+/* Desain dasar untuk semua tombol */
+button {
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #e0e0e0;
+    color: #333333;
+    transition: background-color 0.1s ease;
+}
+
+/* Efek saat tombol diarahkan oleh mouse (hover) */
+button:hover {
+    background-color: #c4c4c4;
+}
+
+/* Desain khusus untuk tombol operator (+, -, x, /, C) */
+button.operator {
+    background-color: #ff9500;
+    color: white;
+}
+
+button.operator:hover {
+    background-color: #e08500;
+}
+
+/* Desain khusus untuk tombol sama dengan (=) agar memanjang ke bawah */
+button.equal {
+    background-color: #25d366;
+    color: white;
+    grid-row: span 2; /* Tombol ini memakan jatah 2 baris vertikal */
+    height: 100%;
+}
+
+button.equal:hover {
+    background-color: #1ebd54;
+}
