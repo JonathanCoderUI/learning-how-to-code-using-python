@@ -101,6 +101,9 @@ button.equal:hover {
     border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
+    
+    /* --- TAMBAHKAN INI (Jika belum ada) --- */
+    min-height: 380px; /* Menjaga tinggi kotak riwayat agar sejajar dengan kalkulator */
 }
 
 .history-card h3 {
@@ -114,9 +117,12 @@ button.equal:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    max-height: 240px;
+    max-height: 280px; 
     overflow-y: auto;
     flex-grow: 1;
+    
+    /* --- TAMBAHKAN INI --- */
+    margin-bottom: 10px; /* Memberi ruang napas tipis sebelum tombol Hapus Riwayat */
 }
 
 #history-list li {
@@ -142,7 +148,9 @@ button.equal:hover {
     font-size: 14px;
     background-color: #ff3b30;
     border-radius: 8px;
-    margin-top: 15px;
+    
+    /* --- REVISI DI SINI --- */
+    margin-top: auto; /* Memaksa tombol turun ke posisi paling bawah */
 }
 .clear-history-btn:hover {
     background-color: #d62217;
