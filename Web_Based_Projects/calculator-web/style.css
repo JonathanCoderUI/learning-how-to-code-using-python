@@ -1,12 +1,43 @@
+:root {
+    --bg-body: #0f0f11;
+    --bg-card: #1e1e24;
+    --bg-display: #111115;
+    --bg-btn: #2a2a35;
+    --bg-btn-hover: #3a3a4a;
+    --bg-btn-active: #444455;
+    --text-main: #ffffff;
+    --text-sub: #a0a0aa;
+    --text-history-item: #bbb;
+    --border-color: rgba(255, 255, 255, 0.05);
+    --footer-color: #666677;
+    --shadow-glow: rgba(37, 211, 102, 0.2);
+}
+
+[data-theme="light"] {
+    --bg-body: #f0f2f5;
+    --bg-card: #ffffff;
+    --bg-display: #f8f9fa;
+    --bg-btn: #e4e6eb;
+    --bg-btn-hover: #d8dadf;
+    --bg-btn-active: #c8ccd3;
+    --text-main: #1c1e21;
+    --text-sub: #606770;
+    --text-history-item: #444950;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --footer-color: #8d949e;
+    --shadow-glow: rgba(37, 211, 102, 0.15);
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #0f0f11;
+    background-color: var(--bg-body);
     font-family: 'Segoe UI', Roboto, sans-serif;
     margin: 0;
-    color: white;
+    color: var(--text-main);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .main-wrapper {
@@ -25,18 +56,49 @@ body {
 }
 
 .calculator {
-    background-color: #1e1e24;
+    background-color: var(--bg-card);
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0px 0px 30px rgba(37, 211, 102, 0.2);
+    box-shadow: 0px 0px 30px var(--shadow-glow);
     width: 340px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+.theme-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+#theme-toggle-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#theme-toggle-btn:hover {
+    background-color: var(--bg-btn-hover);
+    box-shadow: none;
+}
+
+.theme-icon {
+    width: 22px;
+    height: 22px;
+    fill: var(--text-main);
+    transition: fill 0.3s;
 }
 
 #display {
     width: 100%;
     height: 70px;
-    background-color: #111115;
+    background-color: var(--bg-display);
     border: none;
     color: #25d366;
     text-align: right;
@@ -46,7 +108,8 @@ body {
     box-sizing: border-box;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: inset 0px 4px 10px rgba(0,0,0,0.5);
+    box-shadow: inset 0px 4px 10px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
 }
 
 .buttons {
@@ -62,19 +125,19 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 12px;
-    background-color: #2a2a35;
-    color: #ffffff;
-    transition: all 0.1s ease;
+    background-color: var(--bg-btn);
+    color: var(--text-main);
+    transition: background-color 0.1s ease, transform 0.1s ease, color 0.3s;
 }
 
 button:active {
     transform: scale(0.92);
-    background-color: #444455;
+    background-color: var(--bg-btn-active);
 }
 
 button:hover {
-    background-color: #3a3a4a;
-    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    background-color: var(--bg-btn-hover);
+    box-shadow: 0 0 10px rgba(255,255,255,0.05);
 }
 
 button.operator {
@@ -99,20 +162,21 @@ button.equal:hover {
 }
 
 .history-card {
-    background-color: #1e1e24;
+    background-color: var(--bg-card);
     width: 280px;
     padding: 20px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     min-height: 440px; 
     box-sizing: border-box;
+    transition: background-color 0.3s, border 0.3s;
 }
 
 .history-card h3 {
     margin-top: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
     font-size: 18px;
     margin-bottom: 10px;
@@ -130,11 +194,11 @@ button.equal:hover {
 
 #history-list li {
     padding: 10px;
-    border-bottom: 1px solid #2a2a35;
+    border-bottom: 1px solid var(--border-color);
     font-family: monospace;
     text-align: right;
     font-size: 16px;
-    color: #bbb;
+    color: var(--text-history-item);
     word-break: break-all;
 }
 
@@ -164,19 +228,20 @@ button.equal:hover {
 }
 
 .definition-card {
-    background-color: #1e1e24;
+    background-color: var(--bg-card);
     max-width: 650px;
     margin: 30px auto 0 auto;
     padding: 25px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0px 0px 30px rgba(37, 211, 102, 0.2); 
+    border: 1px solid var(--border-color);
+    box-shadow: 0px 0px 30px var(--shadow-glow); 
+    transition: background-color 0.3s, box-shadow 0.3s, border 0.3s;
 }
 
 .definition-card p {
     margin: 0;
     font-size: 14px;
-    color: #a0a0aa;
+    color: var(--text-sub);
     line-height: 1.6;
 }
 
@@ -189,7 +254,7 @@ button.equal:hover {
     bottom: 15px;
     right: 20px;
     font-size: 12px;
-    color: #666677; 
+    color: var(--footer-color); 
     font-family: 'Segoe UI', Roboto, sans-serif;
     letter-spacing: 0.5px;
     user-select: none;
@@ -202,5 +267,5 @@ button.equal:hover {
 .gemini-icon {
     width: 14px;
     height: 14px;
-    fill: #7496ff;
+    fill: #7496ff; 
 }
